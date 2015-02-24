@@ -1,5 +1,8 @@
 // Enemies our player must avoid
 var Enemy = function() {
+    this.rangeOfx= [-300, 900];
+    this.valuesOfy= [100,200,300];
+    this.speed= [100,1000];
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
