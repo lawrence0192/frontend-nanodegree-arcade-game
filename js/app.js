@@ -9,6 +9,8 @@ var Enemy = function() {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    
+    this.reset();
 }
 
 // Update the enemy's position, required method for game
@@ -47,3 +49,10 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+var Lawrence = new Enemy();
+var Britt = new Enemy();
+var Dale = new Enemy();
+var enemies = [Lawrence, Britt, Dale];
+
+var player = new Player();
