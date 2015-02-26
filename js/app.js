@@ -40,18 +40,69 @@ Enemy.prototype.render = function() {
 }
 
 Enemy.prototype.getRandomY = function(){
-    return this.valuesOfy[Math.floor(Math.random() * this.possibleY.length)];
+    return this.valuesOfy[Math.floor(Math.random() * this.valuesOfy.length)];
 }
 
+Enemy.prototype.getRandomSpeed = function() {
+    var minSpeed = this.speedRange[0],
+    var maxSpeed = this.speedRange[1];
+
+    return Math.floor(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
+}
+
+var Player = function() {
+    this.rangeOfx = [-2, 402];
+    this.rangeOfy = [-20, 380];
+    this.sprite = 'images/char-boy.png';
+    this.reset();
+}
+
+Player.prototype.update = function() {
+    this.checkCollisions();
+}
+
+Player.prototype.checkCollisions = function() {
+    if (this.y == -20) {
+        // player is on water, reset
+        this.reset();
+    } else if (this.y >= 60 && this.y <= 220) {
+        var self = this;
+        // player is on road rows, check collisions
+        // loop through each bug
+        allEnemies.forEach(function(enemy) {
+            // is the bug on the same row as the player?
+            if (enemy.y == self.y) {
+                // is the bug on the player?
+                if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
+                    self.reset();
+                }
+            }
+        });
+    }
+}
+
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 380;
+}
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-
+Player.prototype.handleInput = function(key) {
+    if (key === 'left') {
+        this.x -= (this.x - 101 < this.rangeOfx[0]) ? 0 : 101;
+    } else if (key === 'right') {
+        this.x += (this.x + 101 > this.rangeOfx[1]) ? 0 : 101;
+    } else if (key === 'up') {
+        this.y -= (this.y - 80 < this.rangeOfy[0]) ? 0 : 80;
+    } else if (key === 'down') {
+        this.y += (this.y + 80 > this.rangeOfy[1]) ? 0 : 80;
+    }
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
 
 
 // This listens for key presses and sends the keys to your
