@@ -13,9 +13,22 @@ var Enemy = function() {
     this.reset();
 }
 
+Enemy.prototype.reset = function(){
+    var startSpot = this.rangeOfx[0];
+
+    this.x = startSpot;
+    this.y = this.getRandomY();
+    this.speed = this.getRandomSpeed();
+}
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
+    var maxPos = this.rangeOfx[1];
+    this.x += this.speed * dt;
+
+    if (this.x > maxPos) {
+        this.reset();
+    }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -24,6 +37,10 @@ Enemy.prototype.update = function(dt) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+Enemy.prototype.getRandomY = function(){
+    return this.valuesOfy[Math.floor(Math.random() * this.possibleY.length)];
 }
 
 // Now write your own player class
