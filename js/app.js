@@ -85,6 +85,10 @@ Player.prototype.reset = function() {
     this.x = 200;
     this.y = 380;
 }
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
