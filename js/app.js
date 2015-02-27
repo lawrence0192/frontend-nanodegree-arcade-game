@@ -121,6 +121,6 @@ document.addEventListener('keyup', function(e) {
 var Lawrence = new Enemy();
 var Britt = new Enemy();
 var Dale = new Enemy();
-var enemies = [Lawrence, Britt, Dale];
+var allEnemies = [Lawrence, Britt, Dale];
 
 var player = new Player();
