@@ -44,8 +44,8 @@ Enemy.prototype.getRandomY = function(){
 }
 
 Enemy.prototype.getRandomSpeed = function() {
-    var minSpeed = this.speedRange[0],
-    var maxSpeed = this.speedRange[1];
+    var minSpeed = this.speed[0],
+    var maxSpeed = this.speed[1];
 
     return Math.floor(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
 }
