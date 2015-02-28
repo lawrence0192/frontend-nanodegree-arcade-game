@@ -1,5 +1,7 @@
+Object.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 // Enemies our player must avoid
-var Enemy = function() {
+/*var Enemy = function() {
     this.rangeOfx= [-150, 600];
     this.valuesOfy= [60, 140, 220];
     this.speed= [150, 600];
@@ -127,4 +129,4 @@ var Britt = new Enemy();
 var Dale = new Enemy();
 var allEnemies = [Lawrence, Britt, Dale];
 
-var player = new Player();
+var player = new Player();*/
