@@ -51,7 +51,7 @@ Enemy.prototype.update = function(dt) {
 var Player = function(){
     this.sprite = 'images/char-boy.png';
     this.x = 200;
-    this.y = 400;
+    this.y = 380;
 }
 
 //Update player position
