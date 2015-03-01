@@ -3,20 +3,17 @@ Object.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-//Reset player to beginning position
+//Reset the game
 Object.prototype.reset = function() {
   player.x = 200;
-  player.y = 400;
+  player.y = 380;
 }
 
-/*
-    Enemy Objects
-*/
-
-// Enemies the player must avoid
+// Enemies our player must avoid
 var Enemy = function(x,y) {
 
-    // The image/sprite for enemies
+    // The image/sprite for our enemies, this uses
+    // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
 
     //x and y coordinates and movement speed
@@ -28,7 +25,6 @@ var Enemy = function(x,y) {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    //if the enemy crosses off screen, reset its position. Otherwise, it keeps running.
     if(this.x <= 550){
         this.x += this.speed * dt;
     }else{
@@ -42,11 +38,6 @@ Enemy.prototype.update = function(dt) {
         }
     }
 }
-
-/*
-    Player Object
-*/
-
 // Player class and initial x and y coordinates
 var Player = function(){
     this.sprite = 'images/char-boy.png';
@@ -71,7 +62,7 @@ Player.prototype.update = function(){
     }
     this.ctlKey = null;
     
-    //If on water, reset
+    //Reset game once player reaches water
     if(this.y < 25){
         this.reset();
     }
