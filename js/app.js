@@ -77,10 +77,10 @@ Player.prototype.handleInput = function(e){
 // Instantiate enemies and player objects
 var allEnemies = [];
 (function setEnemies(){
-    allEnemies.push(new Enemy(-10, 60));
-    allEnemies.push(new Enemy(-10, 100));
-    allEnemies.push(new Enemy(-10,150));
-    allEnemies.push(new Enemy(-10,220));
+    allEnemies.push(new Enemy(-100, 60));
+    allEnemies.push(new Enemy(-100, 100));
+    allEnemies.push(new Enemy(-100,150));
+    allEnemies.push(new Enemy(-100,220));
 }());
 
 var player = new Player(); 
