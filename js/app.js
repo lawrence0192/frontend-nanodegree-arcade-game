@@ -31,7 +31,7 @@ Enemy.prototype.update = function(dt) {
     if(this.x <= 550){
         this.x += this.speed * dt;
     }else{
-        this.x = -2;
+        this.x = -100;
     }
 
     //Reset game if the enemy and the player are in the same location
