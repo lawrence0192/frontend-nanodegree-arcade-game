@@ -43,7 +43,7 @@ Enemy.prototype.update = function(dt) {
 }
 // Player class and initial x and y coordinates
 var Player = function(){
-    this.sprite = 'images/char-cat-girl.png';
+    this.sprite = 'image/char-boy.png';
     this.x = 200;
     this.y = 380;
 }
