@@ -1,13 +1,13 @@
 // Draw the enemy and player objects on the screen
 Object.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Reset the game
 Object.prototype.reset = function() {
   player.x = 200;
   player.y = 380;
-}
+};
 
 // Enemies our player must avoid
 var Enemy = function(x,y) {
@@ -20,7 +20,7 @@ var Enemy = function(x,y) {
     this.x = x;
     this.y = y;
     this.speed = Math.floor((Math.random() * 200) + 100);
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -40,13 +40,13 @@ Enemy.prototype.update = function(dt) {
             this.reset();
         }
     }
-}
+};
 // Player class and initial x and y coordinates
 var Player = function(){
     this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 380;
-}
+};
 
 //Update player position
 Player.prototype.update = function(){
@@ -65,13 +65,13 @@ Player.prototype.update = function(){
     if(this.y < 25){
         this.reset();
     }
-}
+};
 
 
 //Input handler for player
 Player.prototype.handleInput = function(e){
     this.ctlKey = e;    
-}
+};
 
 
 // Instantiate enemies and player objects
