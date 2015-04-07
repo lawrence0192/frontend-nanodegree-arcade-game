@@ -1,5 +1,8 @@
 frontend-nanodegree-arcade-game
 ===============================
+Instructions for launching the game:
+1. 
+
 Resources used for this project: 
 https://github.com/walesmd/uda-frogger
 
