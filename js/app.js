@@ -1,6 +1,6 @@
 // Draw the enemy and player objects on the screen
 Object.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    
 };
 
 //Reset the game
