@@ -1,9 +1,22 @@
 frontend-nanodegree-arcade-game
 ===============================
-Instructions for launching the game:
-1. Click on the blue link above that says "frontend-nanodegree-arcade-game". You will then be directed to a different
-   page that will show all of the folders and files used to create the game.
-2. Then click on the blue link that says "index.html". You will then see a screen that contains the html code and a     row of 6 buttons.  There are three buttons with words on them and three pictures. From left to right they read       "Raw", 
+Project 3: Frogger
+
+To launch the game, click on the "index.html" file.  
+
+The goal of the game is to move the player from the green tiles (grass) to the blue tiles (water).
+
+The arrow keys are used in order to move the player forward, backward, and side-to-side.
+
+There will also be bugs moving across the screen at random speeds as well that the player will have to avoid.
+
+If the player is touched by one of the bugs, the player will be moved back to the starting position.
+
+If the player achieves the goal of making it to the water, that will also cause the player to be moved back to the starting poistion. But reaching the water, means you have technically won the game.
+
+
+
+
 
 Resources used for this project: 
 https://github.com/walesmd/uda-frogger
