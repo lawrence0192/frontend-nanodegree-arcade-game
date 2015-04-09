@@ -6,7 +6,7 @@ Object.prototype.render = function() {
 //Reset the game
 Object.prototype.reset = function() {
   player.x = 200;
-  player.y = 380;
+  player.y = 400;
 };
 
 // Enemies our player must avoid
